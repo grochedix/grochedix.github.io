@@ -1,0 +1,15 @@
+{
+  "name": "perso-portfolio",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "install:all": "npm install && npm install --prefix avocat-affaires-site && npm install --prefix restaurant-etoile && npm install --prefix marathon-terre-lune",
+    "build": "node scripts/build-portfolio.mjs",
+    "build:portfolio": "node scripts/build-portfolio.mjs",
+    "preview": "serve . -l 4173",
+    "dev": "npm run build && npm run preview"
+  },
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}

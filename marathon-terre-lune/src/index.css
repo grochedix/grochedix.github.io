@@ -1,0 +1,92 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* --- Theme tokens (dark default) --- */
+:root {
+  color-scheme: dark;
+  --bg-deep: #07060d;
+  --bg-card: rgba(18, 16, 32, 0.72);
+  --border: rgba(200, 180, 255, 0.14);
+  --glow: #c9a6ff;
+  --moon: #f5f0dc;
+  --earth: #6eb5ff;
+  --accent: #ff9ecd;
+  --muted: #9a92b0;
+  --text-body: #e8e4f0;
+  --text-card: #c4bdd8;
+  --text-on-accent: #110b1a;
+  --input-bg: rgba(0, 0, 0, 0.35);
+  --input-fg: #f5f0dc;
+  --date-box-bg: rgba(255, 255, 255, 0.04);
+  --partner-bg: rgba(255, 255, 255, 0.04);
+  --pill-btn-bg: rgba(255, 255, 255, 0.05);
+  --nav-fade: rgba(7, 6, 13, 0.94);
+  --star-1: rgba(255, 255, 255, 0.35);
+  --star-2: rgba(255, 255, 255, 0.25);
+  --star-3: rgba(255, 255, 255, 0.2);
+  --star-4: rgba(255, 255, 255, 0.3);
+  --star-5: rgba(255, 255, 255, 0.15);
+  --stars-glow: rgba(100, 60, 180, 0.15);
+  --toast-bg: rgba(110, 181, 255, 0.12);
+  --toast-border: rgba(110, 181, 255, 0.28);
+  --toast-text: #b8dafb;
+  --hero-title-1: #f5f0dc;
+  --hero-title-2: #c9a6ff;
+  --hero-title-3: #6eb5ff;
+}
+
+[data-theme='light'] {
+  color-scheme: light;
+  --bg-deep: #ebe8f4;
+  --bg-card: rgba(255, 255, 255, 0.82);
+  --border: rgba(55, 45, 95, 0.14);
+  --glow: #7c3aed;
+  --moon: #1a1430;
+  --earth: #2563eb;
+  --accent: #c0266d;
+  --muted: #5b5470;
+  --text-body: #241f38;
+  --text-card: #453d62;
+  --text-on-accent: #ffffff;
+  --input-bg: rgba(255, 255, 255, 0.94);
+  --input-fg: #1a1430;
+  --date-box-bg: rgba(255, 255, 255, 0.62);
+  --partner-bg: rgba(255, 255, 255, 0.62);
+  --pill-btn-bg: rgba(255, 255, 255, 0.78);
+  --nav-fade: rgba(235, 232, 244, 0.94);
+  --star-1: rgba(55, 50, 85, 0.12);
+  --star-2: rgba(55, 50, 85, 0.1);
+  --star-3: rgba(55, 50, 85, 0.08);
+  --star-4: rgba(55, 50, 85, 0.11);
+  --star-5: rgba(55, 50, 85, 0.07);
+  --stars-glow: rgba(120, 90, 200, 0.09);
+  --toast-bg: rgba(37, 99, 235, 0.1);
+  --toast-border: rgba(37, 99, 235, 0.22);
+  --toast-text: #1e3a5f;
+  --hero-title-1: #1a1430;
+  --hero-title-2: #7c3aed;
+  --hero-title-3: #2563eb;
+}
+
+body {
+  margin: 0;
+  min-height: 100svh;
+  font-family: Outfit, system-ui, sans-serif;
+  background: var(--bg-deep);
+  color: var(--text-body);
+  -webkit-font-smoothing: antialiased;
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease;
+}
+
+#root {
+  min-height: 100svh;
+}

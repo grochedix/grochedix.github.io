@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+
+# Vite / TypeScript build cache (sources → projets/ via npm run build)
+**/dist/
+**/.vite/
+**/*.tsbuildinfo
+
+# OS & éditeur
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Fichiers locaux & secrets
+*.local
+.env
+.env.*
+!.env.example
+
+# Archives / sauvegardes (non publiées)
+*.zip
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Outils locaux de prévisualisation (optionnel)
+.serve/

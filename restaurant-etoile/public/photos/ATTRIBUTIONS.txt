@@ -1,0 +1,9 @@
+Demo photos (hero, chef portrait, dining room).
+Source: https://picsum.photos (Lorem Picsum).
+
+Image IDs used:
+- hero.jpg    → id 292 (restaurant / interior)
+- chef.jpg    → id 493 (kitchen / table)
+- dining.jpg  → id 488 (interior)
+
+Replace these files with your own JPGs (same filenames) for production.

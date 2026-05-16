@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page introuvable</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      font-family: system-ui, sans-serif;
+      background: #f7f3ed;
+      color: #1c1a16;
+    }
+    main { text-align: center; padding: 2rem; max-width: 28rem; }
+    h1 { font-size: 1.25rem; font-weight: 500; margin: 0 0 0.75rem; }
+    p { color: #8a8278; line-height: 1.6; margin: 0 0 1.5rem; }
+    a { color: #b85c38; }
+  </style>
+</head>
+<body>
+  <main id="content">
+    <p>Redirection…</p>
+  </main>
+  <script>
+    (function () {
+      var bases = [
+        '/projets/avocat-affaires-site',
+        '/projets/restaurant-etoile',
+        '/projets/marathon-terre-lune'
+      ];
+      var p = location.pathname;
+      var base = bases.find(function (b) {
+        return p === b || p.startsWith(b + '/');
+      });
+      var main = document.getElementById('content');
+      if (!base) {
+        main.innerHTML =
+          '<h1>Page introuvable</h1>' +
+          '<p>Cette adresse ne correspond à aucune page du site.</p>' +
+          '<p><a href="/">Retour à l’accueil</a></p>';
+        return;
+      }
+      var rest = p.slice(base.length) || '/';
+      var target = rest + location.search + location.hash;
+      try {
+        sessionStorage.setItem('gh-spa-path', target);
+      } catch (e) {}
+      location.replace(base + '/?p=' + encodeURIComponent(target));
+    })();
+  </script>
+</body>
+</html>
