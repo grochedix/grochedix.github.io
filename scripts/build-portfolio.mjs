@@ -50,4 +50,13 @@ for (const { dir, slug } of projects) {
 }
 
 fs.writeFileSync(path.join(root, '.nojekyll'), '')
-console.error('\nOK: projets/<slug>/ + root .nojekyll')
+
+for (const name of ['robots.txt', 'sitemap.xml']) {
+  const src = path.join(root, name)
+  if (!fs.existsSync(src)) {
+    console.error(`Missing ${name} at repo root`)
+    process.exit(1)
+  }
+}
+
+console.error('\nOK: projets/<slug>/ + root .nojekyll, robots.txt, sitemap.xml')

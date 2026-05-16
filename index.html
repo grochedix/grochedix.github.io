@@ -3,7 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Guillaume Rochedix — Développeur Web à Bruxelles</title>
+  <title>Sites web pour commerçants à Bruxelles — Guillaume Rochedix</title>
+  <meta name="description" content="Création de sites web pour commerçants à Bruxelles : boulangeries, restaurants, boutiques. Vitrine, refonte, contact direct. Basé à Uccle." id="meta-desc" />
+  <link rel="canonical" href="https://grochedix.github.io/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://grochedix.github.io/" />
+  <meta property="og:title" content="Sites web pour commerçants à Bruxelles — Guillaume Rochedix" id="og-title" />
+  <meta property="og:description" content="Création de sites web pour commerçants à Bruxelles : boulangeries, restaurants, boutiques. Vitrine, refonte, contact direct. Basé à Uccle." id="og-desc" />
+  <meta property="og:image" content="https://grochedix.github.io/portrait.png" />
+  <meta property="og:locale" content="fr_BE" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Sites web pour commerçants à Bruxelles — Guillaume Rochedix" id="tw-title" />
+  <meta name="twitter:description" content="Création de sites web pour commerçants à Bruxelles : boulangeries, restaurants, boutiques. Vitrine, refonte, contact direct. Basé à Uccle." id="tw-desc" />
+  <meta name="twitter:image" content="https://grochedix.github.io/portrait.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Guillaume Rochedix",
+    "url": "https://grochedix.github.io/",
+    "image": "https://grochedix.github.io/portrait.png",
+    "description": "Création de sites web pour commerçants à Bruxelles : boulangeries, restaurants, boutiques. Vitrine, refonte, contact direct.",
+    "areaServed": { "@type": "City", "name": "Bruxelles" },
+    "address": { "@type": "PostalAddress", "addressLocality": "Uccle", "addressRegion": "Bruxelles-Capitale", "addressCountry": "BE" },
+    "knowsAbout": ["Création de sites vitrine", "Refonte de site web", "Sites pour commerces locaux"]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
@@ -273,79 +298,96 @@
       animation: scrollPulse 2s ease-in-out infinite;
     }
 
-    /* Portfolio */
-    #portfolio {
-      padding: 8rem 0 9rem;
-      background: var(--cream2);
-      border-bottom: 1px solid var(--border);
+    /* Service examples (demos) */
+    .svc-examples {
+      margin-bottom: 4rem;
+      padding-top: 0.5rem;
     }
-    .portfolio-top { max-width: 720px; margin-bottom: 3.5rem; }
-    .portfolio-heading {
+    .svc-examples-head {
+      max-width: 40rem;
+      margin-bottom: 2rem;
+    }
+    .svc-examples-heading {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 3.2vw, 2.75rem);
-      font-weight: 300;
-      line-height: 1.2;
-      margin-bottom: 1.2rem;
+      font-size: clamp(1.5rem, 2.5vw, 1.9rem);
+      font-weight: 400;
+      line-height: 1.25;
+      margin: 0 0 0.75rem;
     }
-    .portfolio-heading em { font-style: italic; color: var(--accent); }
-    .portfolio-heading strong { font-weight: 600; }
-    .portfolio-intro { font-size: .93rem; color: var(--muted); line-height: 1.85; }
-    .portfolio-grid {
+    .svc-examples-intro {
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.8;
+      margin: 0;
+    }
+    .svc-examples-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1px;
       background: var(--border);
       border: 1px solid var(--border);
     }
-    .portfolio-card {
+    .svc-example-card {
       display: block;
-      background: var(--cream);
-      padding: 2.4rem 2rem;
+      background: var(--cream2);
+      padding: 2rem 1.75rem;
       text-decoration: none;
       color: inherit;
-      transition: background .25s;
+      transition: background 0.25s;
       position: relative;
       overflow: hidden;
     }
-    .portfolio-card::before {
+    .svc-example-card::before {
       content: '';
-      position: absolute; top: 0; left: 0;
-      height: 2px; width: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 2px;
+      width: 0;
       background: var(--accent);
-      transition: width .35s ease;
+      transition: width 0.35s ease;
     }
-    .portfolio-card:hover { background: white; }
-    .portfolio-card:hover::before { width: 100%; }
-    .portfolio-card-k {
+    .svc-example-card:hover {
+      background: var(--cream);
+    }
+    .svc-example-card:hover::before {
+      width: 100%;
+    }
+    .svc-example-tag {
       font-family: 'DM Mono', monospace;
-      font-size: .58rem;
-      letter-spacing: .16em;
+      font-size: 0.58rem;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--dim);
-      margin-bottom: 1.2rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
     }
-    .portfolio-card-title {
+    .svc-example-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.35rem;
+      font-size: 1.3rem;
       font-weight: 600;
-      margin-bottom: .75rem;
+      margin-bottom: 0.65rem;
       line-height: 1.25;
     }
-    .portfolio-card-desc {
-      font-size: .84rem;
+    .svc-example-desc {
+      font-size: 0.84rem;
       color: var(--muted);
-      line-height: 1.75;
-      margin-bottom: 1.5rem;
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
     }
-    .portfolio-card-cta {
+    .svc-example-cta {
       font-family: 'DM Mono', monospace;
-      font-size: .62rem;
-      letter-spacing: .14em;
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
+      color: var(--ink2);
+    }
+    .svc-example-card:hover .svc-example-cta {
       color: var(--accent);
     }
     @media (max-width: 960px) {
-      .portfolio-grid { grid-template-columns: 1fr; }
+      .svc-examples-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     /* Section label */
@@ -421,22 +463,32 @@
       letter-spacing: .12em; text-transform: uppercase;
       color: var(--accent2);
     }
-    .svc-also {
-      grid-column: 1 / -1;
-      padding: 2rem 2.2rem;
+    .svc-also-wrap {
+      margin-top: 3.5rem;
+      padding: 2.2rem 2.4rem;
+      border: 1px solid var(--border2);
       background: var(--cream2);
-      display: flex; align-items: center; gap: 2rem;
-      flex-wrap: wrap;
     }
-    .svc-also-label {
-      font-family: 'DM Mono', monospace; font-size: .62rem;
-      letter-spacing: .16em; text-transform: uppercase; color: var(--muted);
-      white-space: nowrap;
+    .svc-also-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.35rem, 2.2vw, 1.75rem);
+      font-weight: 400;
+      margin: .5rem 0 1rem;
+      line-height: 1.25;
     }
-    .svc-also-items { display: flex; flex-wrap: wrap; gap: .5rem; }
+    .svc-also-intro {
+      font-size: .9rem;
+      color: var(--muted);
+      line-height: 1.75;
+      max-width: 42rem;
+      margin-bottom: 1.4rem;
+    }
+    .svc-also-items { display: flex; flex-wrap: wrap; gap: .55rem; }
     .svc-also-tag {
-      font-size: .82rem; color: var(--ink2);
-      border: 1px solid var(--border2); padding: .3rem .85rem;
+      font-size: .84rem; color: var(--ink2);
+      border: 1px solid var(--border2);
+      background: var(--cream);
+      padding: .4rem .95rem;
     }
 
     /* About */
@@ -694,7 +746,7 @@
 <nav>
   <div class="nav-logo">Dev<span>.</span>bxl</div>
   <div class="nav-right">
-    <a href="#portfolio" class="nav-link" data-i18n="nav.portfolio">Projets</a>
+    <a href="#services" class="nav-link" data-i18n="nav.services">Services</a>
     <div class="lang-switcher">
       <button class="lang-btn active" onclick="setLang('fr')">FR</button>
       <button class="lang-btn" onclick="setLang('en')">EN</button>
@@ -708,9 +760,9 @@
 <section id="hero" class="container">
   <div class="hero-bg-text">web</div>
   <div class="hero-left">
-    <p class="hero-tag" data-i18n="hero.tag">Développeur Web Indépendant · Bruxelles</p>
+    <p class="hero-tag" data-i18n="hero.tag">Sites web pour commerçants · Bruxelles &amp; alentours</p>
     <h1 class="hero-title" data-i18n="hero.title">Votre commerce,<br><em>en ligne</em><br><strong>et visible.</strong></h1>
-    <p class="hero-sub" data-i18n="hero.sub">Je crée des sites web soignés pour les commerçants et indépendants bruxellois. Simple, rapide, efficace.</p>
+    <p class="hero-sub" data-i18n="hero.sub">Je crée des sites clairs pour votre boulangerie, restaurant ou commerce de quartier — pour que vos clients vous trouvent et vous contactent facilement.</p>
     <div class="hero-cta-group">
       <a href="#contact" class="btn-primary" data-i18n="hero.cta1">Parler de mon projet</a>
       <a href="#services" class="btn-secondary" data-i18n="hero.cta2">Voir les services</a>
@@ -730,11 +782,11 @@
         </div>
         <div class="hero-card-item">
           <span class="hci-num">→</span>
-          <div><div class="hci-text" data-i18n="hero.card.3">Artisans &amp; professions libérales</div><div class="hci-sub" data-i18n="hero.card.3s">Portfolio, formulaire de contact, prise de RDV</div></div>
+          <div><div class="hci-text" data-i18n="hero.card.3">Artisans &amp; professions libérales</div><div class="hci-sub" data-i18n="hero.card.3s">Présentation de votre activité, contact, prise de rendez-vous</div></div>
         </div>
         <div class="hero-card-item">
           <span class="hci-num">→</span>
-          <div><div class="hci-text" data-i18n="hero.card.4">Asbl &amp; associations</div><div class="hci-sub" data-i18n="hero.card.4s">Présentation, actualités, formulaires</div></div>
+          <div><div class="hci-text" data-i18n="hero.card.4">Projets plus avancés</div><div class="hci-sub" data-i18n="hero.card.4s">API REST, intégrations, applications métier</div></div>
         </div>
       </div>
     </div>
@@ -744,7 +796,7 @@
       <img class="portrait-img" src="portrait.png" alt="Portrait de Guillaume Rochedix" />
       <div class="portrait-caption">
         <div class="portrait-name">Guillaume Rochedix</div>
-        <div class="portrait-role" data-i18n="hero.portrait.role">Développeur web · Bruxelles</div>
+        <div class="portrait-role" data-i18n="hero.portrait.role">Sites web · Bruxelles</div>
       </div>
     </div>
   </div>
@@ -754,47 +806,16 @@
   </div>
 </section>
 
-<!-- PORTFOLIO -->
-<section id="portfolio">
-  <div class="container">
-    <div class="portfolio-top reveal">
-      <p class="section-label" data-i18n="portfolio.label">Sélection</p>
-      <h2 class="portfolio-heading" data-i18n="portfolio.heading">Travaux<br><em>et démos</em><br><strong>en ligne.</strong></h2>
-      <p class="portfolio-intro" data-i18n="portfolio.intro">Trois projets (React, typo, WebGL) hébergés sur ce site : ouvrez une démo pour voir le rendu.</p>
-    </div>
-    <div class="portfolio-grid">
-      <a href="/projets/avocat-affaires-site/" class="portfolio-card reveal">
-        <div class="portfolio-card-k" data-i18n="portfolio.p1.k">01 · React · MUI · i18next</div>
-        <div class="portfolio-card-title" data-i18n="portfolio.p1.title">Morel &amp; Associés</div>
-        <div class="portfolio-card-desc" data-i18n="portfolio.p1.desc">Bruxelles (Louise) · Droit des affaires — vitrine fictive multilingue (FR/EN/NL) avec MUI.</div>
-        <span class="portfolio-card-cta" data-i18n="portfolio.cta">Ouvrir la démo →</span>
-      </a>
-      <a href="/projets/restaurant-etoile/" class="portfolio-card reveal">
-        <div class="portfolio-card-k" data-i18n="portfolio.p2.k">02 · React</div>
-        <div class="portfolio-card-title" data-i18n="portfolio.p2.title">Restaurant &amp; réservations</div>
-        <div class="portfolio-card-desc" data-i18n="portfolio.p2.desc">Menu interactif, équipe, parcours de réservation.</div>
-        <span class="portfolio-card-cta" data-i18n="portfolio.cta">Ouvrir la démo →</span>
-      </a>
-      <a href="/projets/marathon-terre-lune/" class="portfolio-card reveal">
-        <div class="portfolio-card-k" data-i18n="portfolio.p3.k">03 · Three.js</div>
-        <div class="portfolio-card-title" data-i18n="portfolio.p3.title">Marathon Terre–Lune</div>
-        <div class="portfolio-card-desc" data-i18n="portfolio.p3.desc">Scène WebGL et micro-récit.</div>
-        <span class="portfolio-card-cta" data-i18n="portfolio.cta">Ouvrir la démo →</span>
-      </a>
-    </div>
-  </div>
-</section>
-
 <!-- SERVICES -->
 <section id="services">
   <div class="container">
     <div class="services-top reveal">
       <div>
         <p class="section-label" data-i18n="svc.label">Services</p>
-        <h2 class="services-heading" data-i18n="svc.heading">Ce que je<br>construis<br>pour <em>vous</em>.</h2>
+        <h2 class="services-heading" data-i18n="svc.heading">Ce que je<br>propose<br>pour <em>vous</em>.</h2>
       </div>
       <div class="services-intro-text" data-i18n="svc.intro">
-        <p>Un site web professionnel est aujourd'hui indispensable pour tout commerce local — mais il n'a pas besoin d'être compliqué ni hors de prix. Je propose des solutions sur mesure, pensées pour votre activité et votre clientèle bruxelloise.</p>
+        <p>Un site web professionnel est aujourd'hui indispensable pour tout commerce local — mais il n'a pas besoin d'être compliqué ni hors de prix. Je vous propose un site pensé pour votre commerce et votre clientèle bruxelloise.</p>
         <p>Chaque projet est traité personnellement, de la première discussion à la mise en ligne. Pas d'équipe anonyme, pas de template générique.</p>
       </div>
     </div>
@@ -802,28 +823,57 @@
       <div class="svc-card featured reveal">
         <span class="svc-num">01</span>
         <div class="svc-title" data-i18n="svc.1.title">Site vitrine</div>
-        <div class="svc-text" data-i18n="svc.1.text">Un site élégant qui présente votre commerce, vos horaires, vos produits ou services, et vous met en valeur auprès de vos clients locaux. Mobile, rapide, référencé.</div>
+        <div class="svc-text" data-i18n="svc.1.text">Un site élégant qui présente votre commerce, vos horaires, vos produits ou services, et vous met en valeur auprès de vos clients locaux. Lisible sur téléphone, rapide, facile à trouver sur Google.</div>
         <span class="svc-star">★ <span data-i18n="svc.1.star">Service principal</span></span>
       </div>
       <div class="svc-card reveal" style="transition-delay:.1s">
         <span class="svc-num">02</span>
         <div class="svc-title" data-i18n="svc.2.title">Refonte &amp; modernisation</div>
-        <div class="svc-text" data-i18n="svc.2.text">Votre site date un peu ? Je le remets à neuf : design actuel, compatibilité mobile, performances améliorées. Votre contenu, une nouvelle peau.</div>
+        <div class="svc-text" data-i18n="svc.2.text">Votre site date un peu ? Je le remets à neuf : un look actuel, qui fonctionne bien sur smartphone et s'affiche plus vite. Votre contenu, une nouvelle peau.</div>
       </div>
       <div class="svc-card reveal" style="transition-delay:.2s">
         <span class="svc-num">03</span>
         <div class="svc-title" data-i18n="svc.3.title">Fonctions sur mesure</div>
         <div class="svc-text" data-i18n="svc.3.text">Formulaire de réservation, boutique en ligne simple, agenda interactif, newsletter — des ajouts qui rendent votre site vraiment utile.</div>
       </div>
-      <div class="svc-also reveal">
-        <span class="svc-also-label" data-i18n="svc.also.label">Également disponible ·</span>
-        <div class="svc-also-items">
-          <span class="svc-also-tag" data-i18n="svc.also.1">API REST &amp; intégrations</span>
-          <span class="svc-also-tag" data-i18n="svc.also.2">Applications web métier</span>
-          <span class="svc-also-tag" data-i18n="svc.also.3">Analyse de données</span>
-          <span class="svc-also-tag" data-i18n="svc.also.4">Automatisation</span>
-          <span class="svc-also-tag" data-i18n="svc.also.5">Dashboards &amp; rapports</span>
-        </div>
+    </div>
+    <div class="svc-examples reveal">
+      <div class="svc-examples-head">
+        <p class="section-label" data-i18n="svc.ex.label">À quoi ça ressemble</p>
+        <h3 class="svc-examples-heading" data-i18n="svc.ex.heading">Trois exemples à parcourir librement</h3>
+        <p class="svc-examples-intro" data-i18n="svc.ex.intro">Des exemples de démonstration pour vous montrer le rendu possible — comme si vous visitiez le site d’un vrai commerce.</p>
+      </div>
+      <div class="svc-examples-grid">
+        <a href="/projets/avocat-affaires-site/" class="svc-example-card reveal">
+          <div class="svc-example-tag" data-i18n="svc.ex.p1.tag">Professions libérales · Exemple</div>
+          <div class="svc-example-title" data-i18n="svc.ex.p1.title">Cabinet d’avocats</div>
+          <div class="svc-example-desc" data-i18n="svc.ex.p1.desc">Présentation claire du cabinet, des domaines d’intervention et des contacts — en français, néerlandais et anglais.</div>
+          <span class="svc-example-cta" data-i18n="svc.ex.cta">Voir l’exemple →</span>
+        </a>
+        <a href="/projets/restaurant-etoile/" class="svc-example-card reveal" style="transition-delay:.08s">
+          <div class="svc-example-tag" data-i18n="svc.ex.p2.tag">Restaurant · Exemple</div>
+          <div class="svc-example-title" data-i18n="svc.ex.p2.title">Restaurant &amp; réservations</div>
+          <div class="svc-example-desc" data-i18n="svc.ex.p2.desc">Carte à feuilleter comme un menu papier, présentation de l’équipe et demande de table en ligne.</div>
+          <span class="svc-example-cta" data-i18n="svc.ex.cta">Voir l’exemple →</span>
+        </a>
+        <a href="/projets/marathon-terre-lune/" class="svc-example-card reveal" style="transition-delay:.16s">
+          <div class="svc-example-tag" data-i18n="svc.ex.p3.tag">Communication · Exemple</div>
+          <div class="svc-example-title" data-i18n="svc.ex.p3.title">Page d’accueil originale</div>
+          <div class="svc-example-desc" data-i18n="svc.ex.p3.desc">Une vitrine vivante et mémorable, pour une initiative ou un événement qui veut marquer les esprits.</div>
+          <span class="svc-example-cta" data-i18n="svc.ex.cta">Voir l’exemple →</span>
+        </a>
+      </div>
+    </div>
+    <div class="svc-also-wrap reveal">
+      <p class="section-label" data-i18n="svc.also.label">Au-delà du site vitrine</p>
+      <h3 class="svc-also-heading" data-i18n="svc.also.summary">Projets plus avancés</h3>
+      <p class="svc-also-intro" data-i18n="svc.also.intro">Pour les entreprises ou structures qui ont besoin d'aller plus loin : connexion à des outils existants, automatisation, tableaux de bord.</p>
+      <div class="svc-also-items">
+        <span class="svc-also-tag" data-i18n="svc.also.1">API REST &amp; intégrations</span>
+        <span class="svc-also-tag" data-i18n="svc.also.2">Applications web métier</span>
+        <span class="svc-also-tag" data-i18n="svc.also.3">Analyse de données</span>
+        <span class="svc-also-tag" data-i18n="svc.also.4">Automatisation</span>
+        <span class="svc-also-tag" data-i18n="svc.also.5">Dashboards &amp; rapports</span>
       </div>
     </div>
   </div>
@@ -835,7 +885,7 @@
     <div class="about-grid">
       <div class="about-sticky reveal">
         <p class="section-label" data-i18n="about.label">Qui suis-je</p>
-        <h2 class="about-heading" data-i18n="about.heading">Un développeur<br>de <em>terrain</em>,<br><strong>pas d'agence.</strong></h2>
+        <h2 class="about-heading" data-i18n="about.heading">Guillaume Rochedix,<br>développeur<br>de <em>terrain</em>,<br><strong>pas d'agence.</strong></h2>
         <div class="about-note" data-i18n="about.note">
           Je travaille en activité complémentaire, à côté d'un emploi à temps plein. Cela signifie des disponibilités en soirée et le week-end — et des tarifs qui restent humains.
         </div>
@@ -843,10 +893,10 @@
       <div class="about-right reveal" style="transition-delay:.12s">
         <p class="section-label" data-i18n="about.bio.label">Parcours</p>
         <div class="about-bio" data-i18n="about.bio.text">
-          <p>Basé à <strong>Uccle</strong>, j'ai 30 ans et je travaille à temps plein comme <em>Product Manager</em> dans une agence de notation financière américaine — où je pilote le développement de logiciels spécialisés dans la recherche d'entités (entreprises, personnes) via des APIs REST.</p>
-          <p>Avant cela, j'ai passé plusieurs années comme <em>Software Developer</em> dans un fonds de pension bruxellois, développant des outils internes, automatisant des processus et travaillant sur l'analyse de données.</p>
-          <p>Ma <strong>spécialité technique</strong> : Python — pour le web comme pour la donnée. Un outil polyvalent qui me permet de construire aussi bien des sites vitrines simples que des applications métier plus complexes.</p>
-          <p>Ce que j'apporte aux commerçants locaux, c'est une <strong>rigueur et une exigence</strong> héritées de contextes professionnels exigeants — appliquées à des projets à taille humaine, avec un vrai suivi.</p>
+          <p>Je m'appelle <strong>Guillaume Rochedix</strong>. Basé à <strong>Uccle</strong>, je suis votre interlocuteur direct — pas une hotline, pas un commercial.</p>
+          <p>Mon travail à temps plein en entreprise m'a habitué aux délais, aux engagements tenus et au travail soigné. Cette même exigence s'applique à votre site, même s'il s'agit d'une vitrine pour votre commerce de quartier.</p>
+          <p>En pratique, cela veut dire : vous savez qui fait quoi, vous suivez l'avancement, et on parle la même langue — en <strong>français ou néerlandais</strong>, selon votre clientèle.</p>
+          <p>Je travaille surtout avec des <strong>commerçants et indépendants bruxellois</strong> : boulangerie, restaurant, boutique, cabinet… Des gens qui n'ont pas le temps de s'occuper du « web », et qui veulent un site simple, utile et fiable.</p>
         </div>
       </div>
     </div>
@@ -876,7 +926,7 @@
       </div>
       <div class="step reveal" style="transition-delay:.16s">
         <span class="step-num">3</span>
-        <div class="step-title" data-i18n="step.3.title">Conception</div>
+        <div class="step-title" data-i18n="step.3.title">Création de votre site</div>
         <div class="step-text" data-i18n="step.3.text">Je développe votre site avec soin. Vous suivez l'avancement, donnez vos retours. Les révisions sont incluses.</div>
       </div>
       <div class="step reveal" style="transition-delay:.24s">
@@ -913,7 +963,7 @@
           </div>
           <div class="form-group">
             <label class="form-label" data-i18n="form.type">Type de projet</label>
-            <input type="text" class="form-input" data-i18n-ph="form.type_ph" />
+            <input type="text" class="form-input" data-i18n-ph="form.type_ph" placeholder="Boulangerie, restaurant, cabinet…" />
           </div>
           <div class="form-group">
             <label class="form-label" data-i18n="form.msg">Message</label>
@@ -929,7 +979,7 @@
 </section>
 
 <footer>
-  <div class="footer-copy" data-i18n="footer.copy">© 2025 — Bruxelles, Belgique</div>
+  <div class="footer-copy" data-i18n="footer.copy">© 2026 — Bruxelles, Belgique</div>
   <div class="footer-right">Made with <span>♥</span> in Uccle</div>
 </footer>
 
@@ -937,165 +987,186 @@
 const T = {
   fr:{
     "nav.cta":"Contact",
-    "nav.portfolio":"Projets",
-    "hero.tag":"Guillaume Rochedix · Développeur web · Bruxelles",
+    "nav.services":"Services",
+    "hero.tag":"Sites web pour commerçants · Bruxelles & alentours",
     "hero.title":"Votre commerce,<br><em>en ligne</em><br><strong>et visible.</strong>",
-    "hero.sub":"Je crée des sites web soignés pour les commerçants et indépendants bruxellois. Simple, rapide, efficace.",
+    "hero.sub":"Je crée des sites clairs pour votre boulangerie, restaurant ou commerce de quartier — pour que vos clients vous trouvent et vous contactent facilement.",
     "hero.cta1":"Parler de mon projet","hero.cta2":"Voir les services",
-    "hero.portrait.role":"Développeur web · Bruxelles",
+    "hero.portrait.role":"Sites web · Bruxelles",
     "hero.card.label":"Idéal pour",
     "hero.card.1":"Commerces & boutiques","hero.card.1s":"Vitrine en ligne, horaires, produits phares",
     "hero.card.2":"Restaurants & cafés","hero.card.2s":"Menu, réservations, carte Google intégrée",
-    "hero.card.3":"Artisans & professions libérales","hero.card.3s":"Portfolio, formulaire de contact, prise de RDV",
-    "hero.card.4":"Asbl & associations","hero.card.4s":"Présentation, actualités, formulaires",
+    "hero.card.3":"Artisans & professions libérales","hero.card.3s":"Présentation de votre activité, contact, prise de rendez-vous",
+    "hero.card.4":"Projets plus avancés","hero.card.4s":"API REST, intégrations, applications métier",
     "svc.label":"Services",
-    "svc.heading":"Ce que je<br>construis<br>pour <em>vous</em>.",
-    "svc.intro":"<p>Un site web professionnel est aujourd'hui indispensable pour tout commerce local — mais il n'a pas besoin d'être compliqué ni hors de prix. Je propose des solutions sur mesure, pensées pour votre activité et votre clientèle bruxelloise.</p><p>Chaque projet est traité personnellement, de la première discussion à la mise en ligne. Pas d'équipe anonyme, pas de template générique.</p>",
-    "svc.1.title":"Site vitrine","svc.1.text":"Un site élégant qui présente votre commerce, vos horaires, vos produits ou services, et vous met en valeur auprès de vos clients locaux. Mobile, rapide, référencé.","svc.1.star":"Service principal",
-    "svc.2.title":"Refonte & modernisation","svc.2.text":"Votre site date un peu ? Je le remets à neuf : design actuel, compatibilité mobile, performances améliorées. Votre contenu, une nouvelle peau.",
+    "svc.heading":"Ce que je<br>propose<br>pour <em>vous</em>.",
+    "svc.intro":"<p>Un site web professionnel est aujourd'hui indispensable pour tout commerce local — mais il n'a pas besoin d'être compliqué ni hors de prix. Je vous propose un site pensé pour votre commerce et votre clientèle bruxelloise.</p><p>Chaque projet est traité personnellement, de la première discussion à la mise en ligne. Pas d'équipe anonyme, pas de template générique.</p>",
+    "svc.1.title":"Site vitrine","svc.1.text":"Un site élégant qui présente votre commerce, vos horaires, vos produits ou services, et vous met en valeur auprès de vos clients locaux. Lisible sur téléphone, rapide, facile à trouver sur Google.","svc.1.star":"Service principal",
+    "svc.2.title":"Refonte & modernisation","svc.2.text":"Votre site date un peu ? Je le remets à neuf : un look actuel, qui fonctionne bien sur smartphone et s'affiche plus vite. Votre contenu, une nouvelle peau.",
     "svc.3.title":"Fonctions sur mesure","svc.3.text":"Formulaire de réservation, boutique en ligne simple, agenda interactif, newsletter — des ajouts qui rendent votre site vraiment utile.",
-    "svc.also.label":"Également disponible ·",
+    "svc.also.label":"Au-delà du site vitrine",
+    "svc.also.summary":"Projets plus avancés",
+    "svc.also.intro":"Pour les entreprises ou structures qui ont besoin d'aller plus loin : API REST, connexion à des outils existants, automatisation, tableaux de bord.",
     "svc.also.1":"API REST & intégrations","svc.also.2":"Applications web métier","svc.also.3":"Analyse de données","svc.also.4":"Automatisation","svc.also.5":"Dashboards & rapports",
+    "svc.ex.label":"À quoi ça ressemble",
+    "svc.ex.heading":"Trois exemples à parcourir librement",
+    "svc.ex.intro":"Des exemples de démonstration pour vous montrer le rendu possible — comme si vous visitiez le site d'un vrai commerce.",
+    "svc.ex.p1.tag":"Professions libérales · Exemple",
+    "svc.ex.p1.title":"Cabinet d'avocats",
+    "svc.ex.p1.desc":"Présentation claire du cabinet, des domaines d'intervention et des contacts — en français, néerlandais et anglais.",
+    "svc.ex.p2.tag":"Restaurant · Exemple",
+    "svc.ex.p2.title":"Restaurant et réservations",
+    "svc.ex.p2.desc":"Carte à feuilleter comme un menu papier, présentation de l'équipe et demande de table en ligne.",
+    "svc.ex.p3.tag":"Communication · Exemple",
+    "svc.ex.p3.title":"Page d'accueil originale",
+    "svc.ex.p3.desc":"Une vitrine vivante et mémorable, pour une initiative ou un événement qui veut marquer les esprits.",
+    "svc.ex.cta":"Voir l'exemple →",
     "about.label":"Qui suis-je",
     "about.heading":"Guillaume Rochedix,<br>développeur<br>de <em>terrain</em>,<br><strong>pas d'agence.</strong>",
     "about.note":"Je travaille en activité complémentaire, à côté d'un emploi à temps plein. Cela signifie des disponibilités en soirée et le week-end — et des tarifs qui restent humains.",
     "about.bio.label":"Parcours",
-    "about.bio.text":"<p>Je m'appelle <strong>Guillaume Rochedix</strong>. Basé à <strong>Uccle</strong>, j'ai 30 ans et je travaille à temps plein comme <em>Product Manager</em> dans une agence de notation financière américaine — où je pilote le développement de logiciels spécialisés dans la recherche d'entités (entreprises, personnes) via des APIs REST.</p><p>Avant cela, j'ai passé plusieurs années comme <em>Software Developer</em> dans un fonds de pension bruxellois, développant des outils internes, automatisant des processus et travaillant sur l'analyse de données.</p><p>Ma <strong>spécialité technique</strong> : Python — pour le web comme pour la donnée. Un outil polyvalent qui me permet de construire aussi bien des sites vitrines simples que des applications métier plus complexes.</p><p>Ce que j'apporte aux commerçants locaux, c'est une <strong>rigueur et une exigence</strong> héritées de contextes professionnels exigeants — appliquées à des projets à taille humaine, avec un vrai suivi.</p>",
+    "about.bio.text":"<p>Je m'appelle <strong>Guillaume Rochedix</strong>. Basé à <strong>Uccle</strong>, je suis votre interlocuteur direct — pas une hotline, pas un commercial.</p><p>Mon travail à temps plein en entreprise m'a habitué aux délais, aux engagements tenus et au travail soigné. Cette même exigence s'applique à votre site, même s'il s'agit d'une vitrine pour votre commerce de quartier.</p><p>En pratique, cela veut dire : vous savez qui fait quoi, vous suivez l'avancement, et on parle la même langue — en <strong>français ou néerlandais</strong>, selon votre clientèle.</p><p>Je travaille surtout avec des <strong>commerçants et indépendants bruxellois</strong> : boulangerie, restaurant, boutique, cabinet… Des gens qui n'ont pas le temps de s'occuper du « web », et qui veulent un site simple, utile et fiable.</p>",
     "proc.label":"Méthode",
     "proc.heading":"Comment<br>ça <em>fonctionne</em>.",
     "proc.desc":"Un processus clair et transparent, du premier contact à la mise en ligne. Pas de surprise, pas de délais flous. Je m'adapte à votre rythme — et le mien.",
     "step.1.title":"Discussion","step.1.text":"On se parle de votre activité, de vos besoins, de ce que vous voulez que votre site fasse pour vous. Par mail, téléphone ou en personne à Bruxelles.",
     "step.2.title":"Proposition","step.2.text":"Je vous soumets une proposition claire : périmètre, délai, tarif. Rien de caché. Vous décidez en toute connaissance de cause.",
-    "step.3.title":"Conception","step.3.text":"Je développe votre site avec soin. Vous suivez l'avancement, donnez vos retours. Les révisions sont incluses.",
+    "step.3.title":"Création de votre site","step.3.text":"Je développe votre site avec soin. Vous suivez l'avancement, donnez vos retours. Les révisions sont incluses.",
     "step.4.title":"Mise en ligne","step.4.text":"Votre site est en ligne. Je vous explique comment le gérer au quotidien, et reste disponible pour la suite.",
-    "portfolio.label":"Sélection",
-    "portfolio.heading":"Travaux<br><em>et démos</em><br><strong>en ligne.</strong>",
-    "portfolio.intro":"Trois projets (React, typo, WebGL) hébergés sur ce site : ouvrez une démo pour voir le rendu.",
-    "portfolio.p1.k":"01 · React · MUI · i18next",
-    "portfolio.p1.title":"Morel &amp; Associés",
-    "portfolio.p1.desc":"Bruxelles (Louise) · Droit des affaires — vitrine fictive multilingue (FR/EN/NL) avec MUI.",
-    "portfolio.p2.k":"02 · React",
-    "portfolio.p2.title":"Restaurant et réservations",
-    "portfolio.p2.desc":"Menu interactif, équipe, parcours de réservation.",
-    "portfolio.p3.k":"03 · Three.js",
-    "portfolio.p3.title":"Marathon Terre–Lune",
-    "portfolio.p3.desc":"Scène WebGL et micro-récit.",
-    "portfolio.cta":"Ouvrir la démo →",
     "contact.label":"Contact",
     "contact.heading":"Parlons de<br>votre <em>projet</em>.",
-    "contact.sub":"Une idée, une question, ou juste envie de voir si je peux vous aider ? Écrivez à Guillaume Rochedix. Je réponds dans les 48h — généralement en soirée ou le week-end.",
+    "contact.sub":"Une idée, une question, ou juste envie de voir si je peux vous aider ? Écrivez-moi. Je réponds dans les 48h — généralement en soirée ou le week-end.",
     "contact.loc":"Uccle, Bruxelles","contact.avail":"Disponible en soirée & week-end",
-    "form.name":"Nom","form.email":"Email","form.type":"Type de projet","form.type_ph":"Site vitrine, refonte, application…",
+    "form.name":"Nom","form.email":"Email","form.type":"Type de projet","form.type_ph":"Boulangerie, restaurant, cabinet…",
     "form.msg":"Message","form.msg_ph":"Décrivez votre activité et ce que vous recherchez…","form.send":"Envoyer",
-    "footer.copy":"© 2025 — Bruxelles, Belgique"
+    "footer.copy":"© 2026 — Bruxelles, Belgique"
   },
   en:{
     "nav.cta":"Contact",
-    "nav.portfolio":"Work",
-    "hero.tag":"Guillaume Rochedix · Web developer · Brussels",
+    "nav.services":"Services",
+    "hero.tag":"Websites for local businesses · Brussels area",
     "hero.title":"Your business,<br><em>online</em><br><strong>and visible.</strong>",
-    "hero.sub":"I build polished websites for Brussels merchants and independents. Simple, fast, effective.",
+    "hero.sub":"I build clear websites for your bakery, restaurant or neighbourhood shop — so customers can find you and get in touch easily.",
     "hero.cta1":"Discuss my project","hero.cta2":"See services",
-    "hero.portrait.role":"Web developer · Brussels",
+    "hero.portrait.role":"Websites · Brussels",
     "hero.card.label":"Ideal for",
     "hero.card.1":"Shops & boutiques","hero.card.1s":"Online presence, hours, featured products",
     "hero.card.2":"Restaurants & cafés","hero.card.2s":"Menu, reservations, integrated Google map",
-    "hero.card.3":"Craftspeople & freelancers","hero.card.3s":"Portfolio, contact form, online booking",
-    "hero.card.4":"Nonprofits & associations","hero.card.4s":"Presentation, news, forms",
+    "hero.card.3":"Craftspeople & freelancers","hero.card.3s":"Presentation of your work, contact, online booking",
+    "hero.card.4":"More advanced projects","hero.card.4s":"REST APIs, integrations, business applications",
     "svc.label":"Services",
-    "svc.heading":"What I<br>build<br>for <em>you</em>.",
-    "svc.intro":"<p>A professional website is essential for any local business today — but it doesn't need to be complicated or expensive. I offer tailored solutions, designed for your activity and your Brussels clientele.</p><p>Every project is handled personally, from first discussion to launch. No anonymous team, no generic template.</p>",
-    "svc.1.title":"Showcase website","svc.1.text":"An elegant site presenting your business, hours, products or services — putting you in front of your local customers. Mobile-friendly, fast, SEO-ready.","svc.1.star":"Main service",
-    "svc.2.title":"Redesign & modernisation","svc.2.text":"Your current site feels dated? I'll refresh it: modern design, mobile compatibility, improved performance. Your content, a brand new look.",
-    "svc.3.title":"Custom features","svc.3.text":"Booking forms, simple e-shop, interactive calendar, newsletter — additions that make your site truly useful.",
-    "svc.also.label":"Also available ·",
-    "svc.also.1":"REST API & integrations","svc.also.2":"Business web apps","svc.also.3":"Data analysis","svc.also.4":"Automation","svc.also.5":"Dashboards & reports",
+    "svc.heading":"What I<br>offer<br>for <em>you</em>.",
+    "svc.intro":"<p>A professional website is essential for any local business today — but it doesn't need to be complicated or expensive. I build a site tailored to your shop and your Brussels customers.</p><p>Every project is handled personally, from first discussion to launch. No anonymous team, no generic template.</p>",
+    "svc.1.title":"Showcase website","svc.1.text":"An elegant site presenting your business, hours, products or services — putting you in front of your local customers. Easy to read on phone, fast, easy to find on Google.","svc.1.star":"Main service",
+    "svc.2.title":"Redesign & modernisation","svc.2.text":"Your current site feels dated? I'll refresh it: a modern look that works well on smartphone and loads faster. Your content, a brand new look.",
+    "svc.3.title":"Custom features","svc.3.text":"Booking forms, simple online shop, calendar, newsletter — additions that make your site truly useful.",
+    "svc.also.label":"Beyond showcase sites",
+    "svc.also.summary":"More advanced projects",
+    "svc.also.intro":"For businesses that need to go further: REST APIs, tool integrations, automation, dashboards.",
+    "svc.also.1":"REST API & integrations","svc.also.2":"Business web applications","svc.also.3":"Data analysis","svc.also.4":"Automation","svc.also.5":"Dashboards & reports",
+    "svc.ex.label":"What it can look like",
+    "svc.ex.heading":"Three examples to browse freely",
+    "svc.ex.intro":"Demo examples to show you what's possible — as if you were visiting a real business website.",
+    "svc.ex.p1.tag":"Professional services · Sample",
+    "svc.ex.p1.title":"Law firm",
+    "svc.ex.p1.desc":"A clear presentation of the practice, areas of expertise and contact details — in French, Dutch and English.",
+    "svc.ex.p2.tag":"Restaurant · Sample",
+    "svc.ex.p2.title":"Restaurant and bookings",
+    "svc.ex.p2.desc":"A menu you can flip through like a paper booklet, team presentation and online table request.",
+    "svc.ex.p3.tag":"Communication · Sample",
+    "svc.ex.p3.title":"Original homepage",
+    "svc.ex.p3.desc":"A lively, memorable showcase for an initiative or event that wants to stand out.",
+    "svc.ex.cta":"See the example →",
     "about.label":"About",
     "about.heading":"Guillaume Rochedix,<br>a hands-on<br><em>developer</em>,<br><strong>not an agency.</strong>",
     "about.note":"I work as a side activity alongside a full-time job. That means evenings and weekends — and rates that stay reasonable.",
     "about.bio.label":"Background",
-    "about.bio.text":"<p>My name is <strong>Guillaume Rochedix</strong>. Based in <strong>Uccle</strong>, I'm 30 and work full-time as a <em>Product Manager</em> at an American credit rating agency — leading the development of specialised entity-search software via REST APIs.</p><p>Before that, I spent several years as a <em>Software Developer</em> at a Brussels pension fund, building internal tools, automating processes and working on data analysis.</p><p>My <strong>technical specialty</strong>: Python — for web and data alike. A versatile tool that lets me build anything from simple showcase sites to complex business applications.</p><p>What I bring to local businesses is a <strong>rigour and precision</strong> forged in demanding professional environments — applied to human-scale projects, with genuine follow-up.</p>",
+    "about.bio.text":"<p>My name is <strong>Guillaume Rochedix</strong>. Based in <strong>Uccle</strong>, I'm your direct contact — not a call centre, not a salesperson.</p><p>My full-time work in a company taught me to meet deadlines and deliver carefully. I bring that same care to your site, even when it's a simple showcase for your local shop.</p><p>In practice: you know who does what, you follow progress, and we speak the same language — <strong>French or Dutch</strong>, depending on your customers.</p><p>I mainly work with <strong>Brussels merchants and independents</strong>: bakery, restaurant, shop, practice… People who don't have time for the « web » and want a site that's simple, useful and reliable.</p>",
     "proc.label":"Method",
     "proc.heading":"How it<br><em>works</em>.",
     "proc.desc":"A clear, transparent process from first contact to launch. No surprises, no vague timelines. I adapt to your rhythm — and mine.",
     "step.1.title":"Discussion","step.1.text":"We talk about your business, your needs, what you want your site to do for you. By email, phone, or in person in Brussels.",
     "step.2.title":"Proposal","step.2.text":"I send you a clear proposal: scope, timeline, price. Nothing hidden. You decide with full information.",
-    "step.3.title":"Build","step.3.text":"I develop your site with care. You follow progress, give feedback. Revisions are included.",
+    "step.3.title":"Building your site","step.3.text":"I develop your site with care. You follow progress, give feedback. Revisions are included.",
     "step.4.title":"Launch","step.4.text":"Your site goes live. I explain how to manage it day-to-day, and stay available going forward.",
-    "portfolio.label":"Selected work",
-    "portfolio.heading":"Live<br><em>builds</em><br><strong>and demos.</strong>",
-    "portfolio.intro":"Three technical samples hosted on this site — open a demo to explore the UI.",
-    "portfolio.p1.k":"01 · React · MUI · i18next",
-    "portfolio.p1.title":"Morel &amp; Associates",
-    "portfolio.p1.desc":"Brussels (Louise) · Business law — fictitious multilingual showcase (EN/FR/NL) with MUI.",
-    "portfolio.p2.k":"02 · React",
-    "portfolio.p2.title":"Restaurant and booking",
-    "portfolio.p2.desc":"Interactive menu, team page, reservation flow.",
-    "portfolio.p3.k":"03 · Three.js",
-    "portfolio.p3.title":"Earth–Moon marathon",
-    "portfolio.p3.desc":"WebGL scene and short narrative.",
-    "portfolio.cta":"Open demo →",
     "contact.label":"Contact",
     "contact.heading":"Let's talk<br>about your <em>project</em>.",
-    "contact.sub":"An idea, a question, or just wondering if I can help? Write to Guillaume Rochedix. I reply within 48h — usually evenings or weekends.",
+    "contact.sub":"An idea, a question, or just wondering if I can help? Write to me. I reply within 48h — usually evenings or weekends.",
     "contact.loc":"Uccle, Brussels","contact.avail":"Available evenings & weekends",
-    "form.name":"Name","form.email":"Email","form.type":"Project type","form.type_ph":"Showcase site, redesign, web app…",
+    "form.name":"Name","form.email":"Email","form.type":"Project type","form.type_ph":"Bakery, restaurant, practice…",
     "form.msg":"Message","form.msg_ph":"Describe your business and what you're looking for…","form.send":"Send",
-    "footer.copy":"© 2025 — Brussels, Belgium"
+    "footer.copy":"© 2026 — Brussels, Belgium"
   },
   nl:{
     "nav.cta":"Contact",
-    "nav.portfolio":"Projecten",
-    "hero.tag":"Guillaume Rochedix · Webontwikkelaar · Brussel",
+    "nav.services":"Diensten",
+    "hero.tag":"Websites voor handelaars · Brussel & rand",
     "hero.title":"Uw zaak,<br><em>online</em><br><strong>en zichtbaar.</strong>",
-    "hero.sub":"Ik maak verzorgde websites voor Brusselse handelaars en zelfstandigen. Eenvoudig, snel, doeltreffend.",
+    "hero.sub":"Ik maak duidelijke websites voor uw bakkerij, restaurant of buurtwinkel — zodat klanten u vinden en gemakkelijk contact opnemen.",
     "hero.cta1":"Mijn project bespreken","hero.cta2":"Diensten bekijken",
-    "hero.portrait.role":"Webontwikkelaar · Brussel",
+    "hero.portrait.role":"Websites · Brussel",
     "hero.card.label":"Ideaal voor",
     "hero.card.1":"Winkels & boetieks","hero.card.1s":"Online aanwezigheid, openingsuren, uitgelichte producten",
     "hero.card.2":"Restaurants & cafés","hero.card.2s":"Menu, reservaties, geïntegreerde Google-kaart",
-    "hero.card.3":"Ambachtslieden & vrije beroepen","hero.card.3s":"Portfolio, contactformulier, online afspraken",
-    "hero.card.4":"Vzw's & verenigingen","hero.card.4s":"Voorstelling, nieuws, formulieren",
+    "hero.card.3":"Ambachtslieden & vrije beroepen","hero.card.3s":"Voorstelling van uw activiteit, contact, online afspraken",
+    "hero.card.4":"Geavanceerdere projecten","hero.card.4s":"REST API, integraties, zakelijke applicaties",
     "svc.label":"Diensten",
-    "svc.heading":"Wat ik<br>voor <em>u</em><br>bouw.",
-    "svc.intro":"<p>Een professionele website is vandaag onmisbaar voor elke lokale zaak — maar het hoeft niet ingewikkeld of duur te zijn. Ik bied oplossingen op maat, afgestemd op uw activiteit en uw Brusselse klanten.</p><p>Elk project wordt persoonlijk behandeld, van eerste gesprek tot lancering. Geen anoniem team, geen generiek template.</p>",
-    "svc.1.title":"Visitekaartjesite","svc.1.text":"Een elegante site die uw zaak, openingsuren, producten of diensten presenteert — en u zichtbaar maakt voor uw lokale klanten. Mobiel, snel, SEO-klaar.","svc.1.star":"Hoofddienst",
-    "svc.2.title":"Herontwerp & modernisering","svc.2.text":"Uw huidige site is wat verouderd? Ik geef hem een nieuwe look: modern design, mobiele compatibiliteit, betere prestaties.",
-    "svc.3.title":"Functies op maat","svc.3.text":"Reservatieformulier, eenvoudige webshop, interactieve agenda, nieuwsbrief — toevoegingen die uw site echt nuttig maken.",
-    "svc.also.label":"Ook beschikbaar ·",
-    "svc.also.1":"REST API & integraties","svc.also.2":"Zakelijke webapps","svc.also.3":"Data-analyse","svc.also.4":"Automatisering","svc.also.5":"Dashboards & rapporten",
+    "svc.heading":"Wat ik<br>voor <em>u</em><br>aanbied.",
+    "svc.intro":"<p>Een professionele website is vandaag onmisbaar voor elke lokale zaak — maar het hoeft niet ingewikkeld of duur te zijn. Ik bouw een site afgestemd op uw zaak en uw Brusselse klanten.</p><p>Elk project wordt persoonlijk behandeld, van eerste gesprek tot lancering. Geen anoniem team, geen generiek sjabloon.</p>",
+    "svc.1.title":"Visitekaartjesite","svc.1.text":"Een elegante site die uw zaak, openingsuren, producten of diensten presenteert — en u zichtbaar maakt voor uw lokale klanten. Leesbaar op de telefoon, snel, gemakkelijk te vinden op Google.","svc.1.star":"Hoofddienst",
+    "svc.2.title":"Herontwerp & modernisering","svc.2.text":"Uw huidige site is wat verouderd? Ik geef hem een nieuwe look: modern, werkt goed op smartphone en laadt sneller. Uw inhoud, een frisse uitstraling.",
+    "svc.3.title":"Functies op maat","svc.3.text":"Reservatieformulier, eenvoudige webshop, agenda, nieuwsbrief — toevoegingen die uw site echt nuttig maken.",
+    "svc.also.label":"Voorbij de visitekaartjesite",
+    "svc.also.summary":"Geavanceerdere projecten",
+    "svc.also.intro":"Voor organisaties die verder willen gaan: REST API, koppelingen met bestaande tools, automatisering, dashboards.",
+    "svc.also.1":"REST API & integraties","svc.also.2":"Zakelijke webapplicaties","svc.also.3":"Data-analyse","svc.also.4":"Automatisering","svc.also.5":"Dashboards & rapporten",
+    "svc.ex.label":"Zo kan het eruitzien",
+    "svc.ex.heading":"Drie voorbeelden om vrij te verkennen",
+    "svc.ex.intro":"Demovoorbeelden om u te tonen wat mogelijk is — alsof u de site van een echte zaak bezoekt.",
+    "svc.ex.p1.tag":"Vrije beroepen · Voorbeeld",
+    "svc.ex.p1.title":"Advocatenkantoor",
+    "svc.ex.p1.desc":"Duidelijke voorstelling van het kantoor, de expertise en de contacten — in het Nederlands, Frans en Engels.",
+    "svc.ex.p2.tag":"Restaurant · Voorbeeld",
+    "svc.ex.p2.title":"Restaurant en reservaties",
+    "svc.ex.p2.desc":"Menu om te bladeren als een papieren kaart, teamvoorstelling en online tafelreservatie.",
+    "svc.ex.p3.tag":"Communicatie · Voorbeeld",
+    "svc.ex.p3.title":"Originele startpagina",
+    "svc.ex.p3.desc":"Een levendige, gedenkwaardige vitrine voor een initiatief of evenement dat wil opvallen.",
+    "svc.ex.cta":"Bekijk het voorbeeld →",
     "about.label":"Over mij",
     "about.heading":"Guillaume Rochedix,<br>een <em>hands-on</em><br>ontwikkelaar,<br><strong>geen bureau.</strong>",
     "about.note":"Ik werk als nevenactiviteit naast een voltijdse job. Dat betekent beschikbaarheid 's avonds en in het weekend — en tarieven die menselijk blijven.",
     "about.bio.label":"Achtergrond",
-    "about.bio.text":"<p>Ik heet <strong>Guillaume Rochedix</strong>. Gevestigd in <strong>Ukkel</strong>, 30 jaar oud, werk ik voltijds als <em>Product Manager</em> bij een Amerikaans kredietbeoordelingsbureau — waar ik de ontwikkeling leid van gespecialiseerde entiteitszoeksoftware via REST API's.</p><p>Daarvoor werkte ik meerdere jaren als <em>Software Developer</em> bij een Brussels pensioenfonds, waar ik interne tools bouwde, processen automatiseerde en aan data-analyse werkte.</p><p>Mijn <strong>technische specialiteit</strong>: Python — voor web én data. Een veelzijdig instrument waarmee ik zowel eenvoudige visitekaartjesites als complexe zakelijke applicaties kan bouwen.</p><p>Wat ik meeneem naar lokale handelaars is een <strong>degelijkheid en precisie</strong> die ik opdeed in veeleisende professionele omgevingen — toegepast op menselijke projecten, met echte opvolging.</p>",
+    "about.bio.text":"<p>Ik heet <strong>Guillaume Rochedix</strong>. Gevestigd in <strong>Ukkel</strong>, ik ben uw directe contactpersoon — geen callcenter, geen verkoper.</p><p>Mijn voltijdse job in een bedrijf leerde me deadlines respecteren en zorgvuldig werken. Diezelfde zorg geldt voor uw site, ook als het een eenvoudige vitrine voor uw buurtwinkel is.</p><p>In de praktijk: u weet wie wat doet, u volgt de voortgang, en we spreken dezelfde taal — <strong>Nederlands of Frans</strong>, naargelang uw klanten.</p><p>Ik werk vooral met <strong>Brusselse handelaars en zelfstandigen</strong>: bakkerij, restaurant, winkel, kantoor… Mensen die geen tijd hebben voor het « web » en een site willen die eenvoudig, nuttig en betrouwbaar is.</p>",
     "proc.label":"Werkwijze",
     "proc.heading":"Hoe het<br><em>werkt</em>.",
     "proc.desc":"Een helder, transparant proces van eerste contact tot lancering. Geen verrassingen, geen vage deadlines. Ik pas me aan uw ritme aan — en het mijne.",
     "step.1.title":"Gesprek","step.1.text":"We praten over uw activiteit, uw behoeften en wat u wilt dat uw site voor u doet. Per mail, telefoon of persoonlijk in Brussel.",
-    "step.2.title":"Voorstel","step.2.text":"Ik bezorg u een duidelijk voorstel: scope, tijdlijn, prijs. Niets verborgen. U beslist met volledige informatie.",
-    "step.3.title":"Ontwikkeling","step.3.text":"Ik ontwikkel uw site met zorg. U volgt de voortgang, geeft feedback. Revisies zijn inbegrepen.",
+    "step.2.title":"Voorstel","step.2.text":"Ik bezorg u een duidelijk voorstel: wat erin zit, timing, prijs. Niets verborgen. U beslist met volledige informatie.",
+    "step.3.title":"Uw site maken","step.3.text":"Ik ontwikkel uw site met zorg. U volgt de voortgang, geeft feedback. Revisies zijn inbegrepen.",
     "step.4.title":"Lancering","step.4.text":"Uw site gaat online. Ik leg uit hoe u het dagelijks beheert, en blijf beschikbaar voor het vervolg.",
-    "portfolio.label":"Selectie",
-    "portfolio.heading":"Werk<br><em>en demo's</em><br><strong>online.</strong>",
-    "portfolio.intro":"Drie technische voorbeelden (React, typografie, WebGL) op deze site — open een demo om de UI te verkennen.",
-    "portfolio.p1.k":"01 · React · MUI · i18next",
-    "portfolio.p1.title":"Morel &amp; Associates",
-    "portfolio.p1.desc":"Brussel (Louizalaan) · Ondernemingsrecht — fictieve meertalige vitrine (NL/FR/EN) met MUI.",
-    "portfolio.p2.k":"02 · React",
-    "portfolio.p2.title":"Restaurant en reservaties",
-    "portfolio.p2.desc":"Interactief menu, team, reservatieflow.",
-    "portfolio.p3.k":"03 · Three.js",
-    "portfolio.p3.title":"Marathon Aarde–Maan",
-    "portfolio.p3.desc":"WebGL-scène en kort verhaal.",
-    "portfolio.cta":"Demo openen →",
     "contact.label":"Contact",
     "contact.heading":"Laten we over<br>uw <em>project</em> praten.",
-    "contact.sub":"Een idee, een vraag, of gewoon willen weten of ik kan helpen? Schrijf naar Guillaume Rochedix. Ik antwoord binnen 48u — meestal 's avonds of in het weekend.",
+    "contact.sub":"Een idee, een vraag, of gewoon willen weten of ik kan helpen? Schrijf me. Ik antwoord binnen 48u — meestal 's avonds of in het weekend.",
     "contact.loc":"Ukkel, Brussel","contact.avail":"Beschikbaar 's avonds & weekend",
-    "form.name":"Naam","form.email":"E-mail","form.type":"Type project","form.type_ph":"Visitekaartjesite, herontwerp, webapp…",
+    "form.name":"Naam","form.email":"E-mail","form.type":"Type project","form.type_ph":"Bakkerij, restaurant, kantoor…",
     "form.msg":"Bericht","form.msg_ph":"Beschrijf uw activiteit en wat u zoekt…","form.send":"Verzenden",
-    "footer.copy":"© 2025 — Brussel, België"
+    "footer.copy":"© 2026 — Brussel, België"
+  }
+};
+
+const SEO = {
+  fr: {
+    title: "Sites web pour commerçants à Bruxelles — Guillaume Rochedix",
+    description: "Création de sites web pour commerçants à Bruxelles : boulangeries, restaurants, boutiques. Vitrine, refonte, contact direct. Basé à Uccle."
+  },
+  en: {
+    title: "Websites for local businesses in Brussels — Guillaume Rochedix",
+    description: "Website creation for Brussels merchants: bakeries, restaurants, shops. Showcase sites, redesign, direct contact. Based in Uccle."
+  },
+  nl: {
+    title: "Websites voor handelaars in Brussel — Guillaume Rochedix",
+    description: "Websitecreatie voor Brusselse handelaars: bakkerijen, restaurants, winkels. Visitekaartjesite, herontwerp, direct contact. Gevestigd in Ukkel."
   }
 };
 
@@ -1115,23 +1186,41 @@ function setLang(l) {
     if (T[l][k]) el.setAttribute('placeholder', T[l][k]);
   });
   document.documentElement.lang = l;
+  if (SEO[l]) {
+    document.title = SEO[l].title;
+    const desc = document.getElementById('meta-desc');
+    const ogT = document.getElementById('og-title');
+    const ogD = document.getElementById('og-desc');
+    const twT = document.getElementById('tw-title');
+    const twD = document.getElementById('tw-desc');
+    if (desc) desc.setAttribute('content', SEO[l].description);
+    if (ogT) ogT.setAttribute('content', SEO[l].title);
+    if (ogD) ogD.setAttribute('content', SEO[l].description);
+    if (twT) twT.setAttribute('content', SEO[l].title);
+    if (twD) twD.setAttribute('content', SEO[l].description);
+  }
 }
 
 /* Cursor */
 const cur = document.getElementById('cursor');
 const ring = document.getElementById('cursorRing');
 let mx=0, my=0;
-document.addEventListener('mousemove', e => {
-  mx = e.clientX; my = e.clientY;
-  cur.style.left = mx+'px'; cur.style.top = my+'px';
-  ring.style.left = mx+'px'; ring.style.top = my+'px';
-});
+if (cur && ring) {
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    cur.style.left = mx+'px'; cur.style.top = my+'px';
+    ring.style.left = mx+'px'; ring.style.top = my+'px';
+  });
+}
 
 /* Scroll reveal */
 const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.1 });
-document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+document.querySelectorAll('.reveal').forEach(el => {
+  obs.observe(el);
+  if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('visible');
+});
 
 /* Form */
 function handleSubmit(e) {
@@ -1144,20 +1233,18 @@ function handleSubmit(e) {
 
 setLang('fr');
 
-document.addEventListener('touchstart', e => {
+if (ring) {
+  document.addEventListener('touchstart', e => {
     const touch = e.touches[0];
     const x = touch.clientX;
     const y = touch.clientY;
-
-    // Positionner l'anneau sur le point de contact[cite: 1]
     ring.style.left = x + 'px';
     ring.style.top = y + 'px';
-
-    // Forcer le redémarrage de l'animation
     ring.classList.remove('active-touch');
-    void ring.offsetWidth; // Astuce pour "reset" l'élément dans le DOM
+    void ring.offsetWidth;
     ring.classList.add('active-touch');
-}, { passive: true });
+  }, { passive: true });
+}
 </script>
 </body>
 </html>
