@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Dev.bxl">
+  <rect width="32" height="32" rx="5" fill="#1c1a16"/>
+  <text x="13.5" y="22.5" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="600" fill="#f7f3ed" text-anchor="middle">D</text>
+  <circle cx="23.5" cy="8.5" r="3.25" fill="#b85c38"/>
+</svg>
