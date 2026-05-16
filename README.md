@@ -26,6 +26,26 @@ npm run build
 
 Reconstruit les trois apps avec `base: /projets/<slug>/`, régénère `projets/` et `.nojekyll`.
 
+## Formulaire de contact (gratuit)
+
+Un seul bouton **Envoyer** : le visiteur remplit le formulaire, vous recevez le message par **email** ou **WhatsApp** selon ce que vous configurez dans `js/contact-config.js`.
+
+1. **Email (formulaire)** — clé gratuite sur [web3forms.com](https://web3forms.com), puis encodez-la :
+   ```bash
+   node scripts/encode-contact.mjs web3forms VOTRE_CLE
+   ```
+   Collez `web3formsKeyEncoded` dans `js/contact-config.js`. Sur Web3Forms, **limitez la clé au domaine** `grochedix.github.io`.
+2. **WhatsApp** et **email de secours** :
+   ```bash
+   node scripts/encode-contact.mjs whatsapp 324XXXXXXXX
+   node scripts/encode-contact.mjs email vous@exemple.com
+   ```
+   Ne commitez jamais ces valeurs en clair (obfuscation uniquement, pas un hash).
+3. **Secours** — `mailtoEmail` si ni l’un ni l’autre n’est configuré.
+4. **Telegram** — `telegramUsername` : lien direct à côté du formulaire (optionnel).
+
+Après modification de `contact-config.js`, commitez et poussez pour GitHub Pages.
+
 ## Prévisualisation locale
 
 ```bash

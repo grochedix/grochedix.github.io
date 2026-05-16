@@ -610,6 +610,58 @@
       font-weight: 400; transition: background .2s;
     }
     .form-btn:hover { background: var(--accent2); }
+    .form-btn:disabled { opacity: .55; cursor: not-allowed; }
+    .form-actions {
+      display: flex;
+      align-items: stretch;
+      gap: .75rem;
+      flex-wrap: wrap;
+    }
+    .form-actions .form-btn { flex: 1; min-width: 10rem; justify-content: center; }
+    .btn-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 3.25rem;
+      flex-shrink: 0;
+      border: 1px solid rgba(37, 211, 102, .45);
+      background: rgba(37, 211, 102, .12);
+      color: #5dde7e;
+      cursor: none;
+      transition: background .2s, border-color .2s, color .2s;
+    }
+    .btn-whatsapp:hover {
+      background: rgba(37, 211, 102, .22);
+      border-color: #5dde7e;
+      color: #9ae8b0;
+    }
+    .btn-whatsapp svg { width: 1.35rem; height: 1.35rem; fill: currentColor; }
+    .btn-whatsapp[hidden] { display: none; }
+    .form-feedback {
+      font-size: .85rem;
+      line-height: 1.6;
+      margin-top: 1rem;
+      min-height: 1.4em;
+    }
+    .form-feedback.ok { color: #9fd4a8; }
+    .form-feedback.err { color: #e8a090; }
+    .contact-links {
+      display: flex; flex-direction: column; gap: .75rem;
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,.08);
+    }
+    .contact-link {
+      font-family: 'DM Mono', monospace;
+      font-size: .68rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .contact-link:hover { color: var(--cream); }
+    .contact-links[hidden] { display: none; }
 
     /* Footer */
     footer {
@@ -950,28 +1002,39 @@
           <div class="contact-item"><span>◆</span> <span data-i18n="contact.loc">Uccle, Bruxelles</span></div>
           <div class="contact-item"><span>◆</span> <span data-i18n="contact.avail">Disponible en soirée &amp; week-end</span></div>
         </div>
+        <div class="contact-links" id="contactLinks" hidden>
+          <a class="contact-link" id="contactTelegram" href="#" target="_blank" rel="noopener" hidden data-i18n="contact.link.telegram">Telegram</a>
+        </div>
       </div>
       <div class="reveal" style="transition-delay:.15s">
-        <form onsubmit="handleSubmit(event)">
+        <form id="contactForm" onsubmit="handleSubmit(event)" novalidate>
+          <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none" />
           <div class="form-group">
-            <label class="form-label" data-i18n="form.name">Nom</label>
-            <input type="text" class="form-input" required />
+            <label class="form-label" for="contact-name" data-i18n="form.name">Nom</label>
+            <input type="text" id="contact-name" name="name" class="form-input" required autocomplete="name" />
           </div>
           <div class="form-group">
-            <label class="form-label" data-i18n="form.email">Email</label>
-            <input type="email" class="form-input" required />
+            <label class="form-label" for="contact-email" data-i18n="form.email">Email</label>
+            <input type="email" id="contact-email" name="email" class="form-input" required autocomplete="email" />
           </div>
           <div class="form-group">
-            <label class="form-label" data-i18n="form.type">Type de projet</label>
-            <input type="text" class="form-input" data-i18n-ph="form.type_ph" placeholder="Boulangerie, restaurant, cabinet…" />
+            <label class="form-label" for="contact-type" data-i18n="form.type">Type de projet</label>
+            <input type="text" id="contact-type" name="project_type" class="form-input" data-i18n-ph="form.type_ph" placeholder="Boulangerie, restaurant, cabinet…" />
           </div>
           <div class="form-group">
-            <label class="form-label" data-i18n="form.msg">Message</label>
-            <textarea class="form-textarea" data-i18n-ph="form.msg_ph" required></textarea>
+            <label class="form-label" for="contact-msg" data-i18n="form.msg">Message</label>
+            <textarea id="contact-msg" name="message" class="form-textarea" data-i18n-ph="form.msg_ph" required></textarea>
           </div>
-          <button type="submit" class="form-btn">
-            <span data-i18n="form.send">Envoyer</span> →
-          </button>
+          <div class="form-actions">
+            <button type="submit" class="form-btn" id="contactSubmit">
+              <span data-i18n="form.send">Envoyer</span> →
+            </button>
+            <button type="button" class="btn-whatsapp" id="contactWhatsAppBtn" hidden
+              aria-label="Contacter sur WhatsApp" data-i18n-aria="form.wa_aria">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </button>
+          </div>
+          <p class="form-feedback" id="formFeedback" role="status" aria-live="polite"></p>
         </form>
       </div>
     </div>
@@ -983,6 +1046,8 @@
   <div class="footer-right">Made with <span>♥</span> in Uccle</div>
 </footer>
 
+<script src="/js/contact-utils.js"></script>
+<script src="/js/contact-config.js"></script>
 <script>
 const T = {
   fr:{
@@ -1037,8 +1102,11 @@ const T = {
     "contact.heading":"Parlons de<br>votre <em>projet</em>.",
     "contact.sub":"Une idée, une question, ou juste envie de voir si je peux vous aider ? Écrivez-moi. Je réponds dans les 48h — généralement en soirée ou le week-end.",
     "contact.loc":"Uccle, Bruxelles","contact.avail":"Disponible en soirée & week-end",
+    "contact.channel.email":"Par email","contact.channel.whatsapp":"Par WhatsApp",
+    "contact.link.email":"Par email direct","contact.link.whatsapp":"WhatsApp","contact.link.telegram":"Telegram",
     "form.name":"Nom","form.email":"Email","form.type":"Type de projet","form.type_ph":"Boulangerie, restaurant, cabinet…",
     "form.msg":"Message","form.msg_ph":"Décrivez votre activité et ce que vous recherchez…","form.send":"Envoyer",
+    "form.sending":"Envoi en cours…","form.success":"Message envoyé. Je vous réponds sous 48h.","form.error":"Envoi impossible. Réessayez dans un instant.","form.whatsapp_open":"Ouverture de WhatsApp…","form.wa_aria":"Contacter sur WhatsApp",
     "footer.copy":"© 2026 — Bruxelles, Belgique"
   },
   en:{
@@ -1093,8 +1161,11 @@ const T = {
     "contact.heading":"Let's talk<br>about your <em>project</em>.",
     "contact.sub":"An idea, a question, or just wondering if I can help? Write to me. I reply within 48h — usually evenings or weekends.",
     "contact.loc":"Uccle, Brussels","contact.avail":"Available evenings & weekends",
+    "contact.channel.email":"By email","contact.channel.whatsapp":"By WhatsApp",
+    "contact.link.email":"Direct email","contact.link.whatsapp":"WhatsApp","contact.link.telegram":"Telegram",
     "form.name":"Name","form.email":"Email","form.type":"Project type","form.type_ph":"Bakery, restaurant, practice…",
     "form.msg":"Message","form.msg_ph":"Describe your business and what you're looking for…","form.send":"Send",
+    "form.sending":"Sending…","form.success":"Message sent. I'll reply within 48h.","form.error":"Could not send. Please try again shortly.","form.whatsapp_open":"Opening WhatsApp…","form.wa_aria":"Contact on WhatsApp",
     "footer.copy":"© 2026 — Brussels, Belgium"
   },
   nl:{
@@ -1149,8 +1220,11 @@ const T = {
     "contact.heading":"Laten we over<br>uw <em>project</em> praten.",
     "contact.sub":"Een idee, een vraag, of gewoon willen weten of ik kan helpen? Schrijf me. Ik antwoord binnen 48u — meestal 's avonds of in het weekend.",
     "contact.loc":"Ukkel, Brussel","contact.avail":"Beschikbaar 's avonds & weekend",
+    "contact.channel.email":"Per e-mail","contact.channel.whatsapp":"Via WhatsApp",
+    "contact.link.email":"Directe e-mail","contact.link.whatsapp":"WhatsApp","contact.link.telegram":"Telegram",
     "form.name":"Naam","form.email":"E-mail","form.type":"Type project","form.type_ph":"Bakkerij, restaurant, kantoor…",
     "form.msg":"Bericht","form.msg_ph":"Beschrijf uw activiteit en wat u zoekt…","form.send":"Verzenden",
+    "form.sending":"Verzenden…","form.success":"Bericht verzonden. Ik antwoord binnen 48u.","form.error":"Verzenden mislukt. Probeer het zo meteen opnieuw.","form.whatsapp_open":"WhatsApp openen…","form.wa_aria":"Contact via WhatsApp",
     "footer.copy":"© 2026 — Brussel, België"
   }
 };
@@ -1184,6 +1258,10 @@ function setLang(l) {
   document.querySelectorAll('[data-i18n-ph]').forEach(el => {
     const k = el.getAttribute('data-i18n-ph');
     if (T[l][k]) el.setAttribute('placeholder', T[l][k]);
+  });
+  document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+    const k = el.getAttribute('data-i18n-aria');
+    if (T[l][k]) el.setAttribute('aria-label', T[l][k]);
   });
   document.documentElement.lang = l;
   if (SEO[l]) {
@@ -1222,16 +1300,172 @@ document.querySelectorAll('.reveal').forEach(el => {
   if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('visible');
 });
 
-/* Form */
-function handleSubmit(e) {
+/* Contact */
+function t(key) {
+  return (T[lang] && T[lang][key]) || (T.fr && T.fr[key]) || '';
+}
+
+function setFormFeedback(msg, ok) {
+  const el = document.getElementById('formFeedback');
+  if (!el) return;
+  el.textContent = msg;
+  el.className = 'form-feedback' + (msg ? (ok ? ' ok' : ' err') : '');
+}
+
+function getFormData(form) {
+  return {
+    name: form.name.value.trim(),
+    email: form.email.value.trim(),
+    project_type: form.project_type.value.trim(),
+    message: form.message.value.trim(),
+  };
+}
+
+function buildWhatsAppText(data) {
+  const lines = [
+    `Bonjour, je suis ${data.name}.`,
+    data.project_type ? `Projet : ${data.project_type}` : '',
+    data.message,
+    `Email : ${data.email}`,
+  ].filter(Boolean);
+  return lines.join('\n');
+}
+
+function openWhatsApp(data) {
+  if (typeof window.openWhatsAppChat !== 'function') return false;
+  return window.openWhatsAppChat(buildWhatsAppText(data));
+}
+
+function hasWhatsAppConfigured() {
+  return typeof window.getWhatsAppPhone === 'function' && !!window.getWhatsAppPhone();
+}
+
+async function sendViaWeb3Forms(data) {
+  const key =
+    typeof window.getWeb3FormsKey === 'function' ? window.getWeb3FormsKey() : '';
+  if (!key) return { ok: false, noKey: true };
+
+  const subject = data.project_type
+    ? `Contact Dev.bxl — ${data.project_type}`
+    : 'Contact Dev.bxl';
+
+  const res = await fetch('https://api.web3forms.com/submit', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+    body: JSON.stringify({
+      access_key: key,
+      name: data.name,
+      email: data.email,
+      subject,
+      message: (data.project_type ? `Type de projet : ${data.project_type}\n\n` : '') + data.message,
+      from_name: 'Dev.bxl — formulaire',
+      botcheck: false,
+    }),
+  });
+  const json = await res.json();
+  return { ok: res.ok && json.success };
+}
+
+function sendViaMailto(data) {
+  const to =
+    typeof window.getObfuscatedEmail === 'function' ? window.getObfuscatedEmail() : '';
+  if (!to) return false;
+  const subject = encodeURIComponent(
+    data.project_type ? `Projet : ${data.project_type}` : 'Contact depuis Dev.bxl'
+  );
+  const body = encodeURIComponent(
+    `Nom : ${data.name}\nEmail : ${data.email}\n\n${data.message}`
+  );
+  window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+  return true;
+}
+
+async function handleSubmit(e) {
   e.preventDefault();
-  const btn = e.target.querySelector('.form-btn span');
-  const orig = btn.innerHTML;
-  btn.textContent = lang==='fr'?'Envoyé ✓':lang==='en'?'Sent ✓':'Verzonden ✓';
-  setTimeout(() => { btn.innerHTML = orig; e.target.reset(); }, 2500);
+  const form = e.target;
+  if (form.botcheck && form.botcheck.checked) return;
+
+  const data = getFormData(form);
+  const btn = document.getElementById('contactSubmit');
+  const btnSpan = btn && btn.querySelector('span');
+  const origLabel = btnSpan ? btnSpan.textContent : '';
+
+  setFormFeedback('', true);
+  if (btn) btn.disabled = true;
+  if (btnSpan) btnSpan.textContent = t('form.sending');
+
+  try {
+    const hasEmail =
+      typeof window.getWeb3FormsKey === 'function' && !!window.getWeb3FormsKey();
+
+    const last = Number(localStorage.getItem('contactLastSubmit') || 0);
+    if (Date.now() - last < 60000) {
+      setFormFeedback(t('form.error'), false);
+      return;
+    }
+
+    if (hasEmail) {
+      const result = await sendViaWeb3Forms(data);
+      if (result.ok) {
+        setFormFeedback(t('form.success'), true);
+        form.reset();
+      } else {
+        setFormFeedback(t('form.error'), false);
+      }
+    } else if (sendViaMailto(data)) {
+      setFormFeedback(t('form.success'), true);
+      form.reset();
+    } else {
+      setFormFeedback(t('form.error'), false);
+      return;
+    }
+    localStorage.setItem('contactLastSubmit', String(Date.now()));
+  } catch {
+    setFormFeedback(t('form.error'), false);
+  } finally {
+    if (btn) btn.disabled = false;
+    if (btnSpan) btnSpan.textContent = origLabel || t('form.send');
+  }
+}
+
+function handleWhatsAppClick() {
+  const form = document.getElementById('contactForm');
+  if (!form || !hasWhatsAppConfigured()) return;
+
+  const data = getFormData(form);
+  const text =
+    data.name || data.message || data.email
+      ? buildWhatsAppText(data)
+      : '';
+
+  if (window.openWhatsAppChat(text)) {
+    setFormFeedback(t('form.whatsapp_open'), true);
+  } else {
+    setFormFeedback(t('form.error'), false);
+  }
+}
+
+function initContact() {
+  const cfg = window.CONTACT_CONFIG || {};
+  const tg = (cfg.telegramUsername || '').replace(/^@/, '').trim();
+
+  const waBtn = document.getElementById('contactWhatsAppBtn');
+  if (waBtn && hasWhatsAppConfigured()) {
+    waBtn.hidden = false;
+    waBtn.addEventListener('click', handleWhatsAppClick);
+  }
+
+  const links = document.getElementById('contactLinks');
+  const tgEl = document.getElementById('contactTelegram');
+  if (tgEl && tg) {
+    tgEl.href = `https://t.me/${tg}`;
+    tgEl.hidden = false;
+    if (links) links.hidden = false;
+  }
 }
 
 setLang('fr');
+initContact();
 
 if (ring) {
   document.addEventListener('touchstart', e => {
