@@ -9,6 +9,10 @@ export function LangOutlet() {
   useEffect(() => {
     if (isLocale(lang)) {
       document.documentElement.lang = lang
+      try {
+        localStorage.setItem('lang', lang)
+        localStorage.setItem('lunathon-locale', lang)
+      } catch {}
     } else {
       document.documentElement.lang = 'fr'
     }

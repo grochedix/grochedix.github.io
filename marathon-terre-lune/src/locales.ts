@@ -518,6 +518,9 @@ export const COPY: Record<Locale, Copy> = {
 
 export function getInitialLocale(): Locale {
   try {
+    const mainStored = localStorage.getItem('lang')
+    if (isLocale(mainStored)) return mainStored
+
     const stored = localStorage.getItem(LOCALE_STORAGE_KEY)
     if (isLocale(stored)) return stored
   } catch {

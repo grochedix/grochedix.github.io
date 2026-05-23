@@ -71,6 +71,7 @@ export default function App() {
     setRegistered(false)
     try {
       localStorage.setItem(LOCALE_STORAGE_KEY, next)
+      localStorage.setItem('lang', next)
     } catch {
       /* ignore */
     }

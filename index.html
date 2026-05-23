@@ -1250,6 +1250,20 @@ let lang = 'fr';
 
 function setLang(l) {
   lang = l;
+  try {
+    localStorage.setItem('lang', l);
+    localStorage.setItem('lunathon-locale', l);
+  } catch (e) {}
+  
+  // Mettre à jour les liens vers les démos pour transmettre la langue (indispensable si ports différents)
+  document.querySelectorAll('.svc-example-card').forEach(card => {
+    const href = card.getAttribute('href');
+    if (href) {
+      const baseHref = href.split('?')[0];
+      card.setAttribute('href', baseHref + '?lang=' + l);
+    }
+  });
+
   document.querySelectorAll('.lang-btn').forEach(b =>
     b.classList.toggle('active', b.textContent === l.toUpperCase())
   );
@@ -1466,7 +1480,14 @@ function initContact() {
   }
 }
 
-setLang('fr');
+let initialLang = 'fr';
+try {
+  const stored = localStorage.getItem('lang');
+  if (stored === 'en' || stored === 'nl') {
+    initialLang = stored;
+  }
+} catch (e) {}
+setLang(initialLang);
 initContact();
 
 if (ring) {

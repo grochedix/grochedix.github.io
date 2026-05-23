@@ -8,11 +8,19 @@ import { NotFoundPage } from './pages/NotFoundPage'
 
 const routerBasename = import.meta.env.BASE_URL.replace(/\/$/, '')
 
+const getInitialLangRedirect = () => {
+  try {
+    const stored = localStorage.getItem('lang');
+    if (stored === 'en' || stored === 'nl') return `/${stored}`;
+  } catch {}
+  return '/fr';
+};
+
 export default function App() {
   return (
     <BrowserRouter basename={routerBasename || undefined}>
       <Routes>
-        <Route path="/" element={<Navigate to="/fr" replace />} />
+        <Route path="/" element={<Navigate to={getInitialLangRedirect()} replace />} />
         <Route path="/:lang" element={<LangOutlet />}>
           <Route element={<SiteLayout />}>
             <Route index element={<HomePage />} />
